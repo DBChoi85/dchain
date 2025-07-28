@@ -7,7 +7,7 @@ class Acc_List:
         if not os.path.exists(db_dir_loc):
             os.mkdir(db_dir_loc)
         db_loc = os.path.join(db_dir_loc, "user_acc_list.db")
-        self.conn = sqlite3.connect(db_loc)
+        self.conn = sqlite3.connect(db_loc, check_same_thread=False)
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
                             CREATE TABLE IF NOT EXISTS kv (

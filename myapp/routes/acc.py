@@ -27,7 +27,8 @@ def create_acc():
         addr = acc_data['address']
         set_acc_db.save_private_key(addr, acc_data['privatekey'])
         set_acc_db.save_public_key(addr, acc_data['publickey'])
-        return addr
+        set_acc_db.commit()
+        return jsonify(addr)
     else:
         return response
 

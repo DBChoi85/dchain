@@ -5,7 +5,7 @@ class Balance_List:
     def __init__(self):
         db_dir_loc = "./data_base"
         db_loc = os.path.join(db_dir_loc, "user_acc_balance.db")
-        self.conn = sqlite3.connect(db_loc)
+        self.conn = sqlite3.connect(db_loc, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
     def all_list(self):
