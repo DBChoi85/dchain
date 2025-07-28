@@ -1,0 +1,27 @@
+{"state": "OK", 
+"rcode": {}, 
+"msg": "", 
+"data": 
+{"contract": 
+{"data": 
+{"privatekey": "044dc2ea2bb15599b85946bd9975d568e276ce11ceb937505c88bd5dbed83d7efpr",
+ "publickey": "02f17cefdd554aa8a7db787d07246d9295e72fc1860dab99d57ed2dbeb07e2d3d1fpu", 
+ "address": "0xf605141e3aFa5a1d90EC9b6A9e8C9285f95d5250fca"}, 
+ "tx": {"hash": "4hgsHhXf7MsVUn7FzTidvu6wfY4FztZSdZaSddSfJKFS", 
+ "fact_hash": "7fYPNMXCn4MESVdaavDjyQGqKEyPj1s8WexNgeVTqJZG"}, 
+ "issued": "2025-07-27T04:44:32.608Z", 
+ "response": {"hash": "4hgsHhXf7MsVUn7FzTidvu6wfY4FztZSdZaSddSfJKFS", 
+ "fact": {"hash": "7fYPNMXCn4MESVdaavDjyQGqKEyPj1s8WexNgeVTqJZG", 
+ "token": "MjAyNS0wNy0yNyAwNDo0NDoyNy4wMTcgKzAwMDAgVVRD", 
+ "_hint": "mitum-extension-create-contract-account-operation-fact-v0.0.1", 
+ "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca", 
+ "items": [{"_hint": "mitum-extension-create-contract-account-multiple-amounts-v0.0.1",
+  "keys": {"_hint": "mitum-currency-keys-v0.0.1",
+   "hash": "f605141e3afa5a1d90ec9b6a9e8c9285f95d5250", 
+   "keys": [{"_hint": "mitum-currency-key-v0.0.1", "weight": 100, 
+   "key": "02f17cefdd554aa8a7db787d07246d9295e72fc1860dab99d57ed2dbeb07e2d3d1fpu"}], 
+   "threshold": 100},
+    "amounts": [{"amount": "1", "currency": "DMC", "_hint": "mitum-currency-amount-v0.0.1"}]}]}, 
+    "signs": [{"signed_at": "2025-07-27T04:44:27.018Z", 
+    "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu", 
+    "signature": "5BpRZ4tixXBdme8BHgup2NxAdtS7fwMY8X1zbfjLohyg4ybjsus13sgvyVirvTtgKGYb8tf13GRCZ8XVjE8H2iZqg3DXi"}], "_hint": "mitum-extension-create-contract-account-operation-v0.0.1"}, "receipt": {"_hint": "mitum-currency-operation-value-v0.0.1", "hash": "7fYPNMXCn4MESVdaavDjyQGqKEyPj1s8WexNgeVTqJZG", "operation": {"hash": "4hgsHhXf7MsVUn7FzTidvu6wfY4FztZSdZaSddSfJKFS", "fact": {"hash": "7fYPNMXCn4MESVdaavDjyQGqKEyPj1s8WexNgeVTqJZG", "token": "MjAyNS0wNy0yNyAwNDo0NDoyNy4wMTcgKzAwMDAgVVRD", "_hint": "mitum-extension-create-contract-account-operation-fact-v0.0.1", "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca", "items": [{"_hint": "mitum-extension-create-contract-account-multiple-amounts-v0.0.1", "keys": {"_hint": "mitum-currency-keys-v0.0.1", "hash": "f605141e3afa5a1d90ec9b6a9e8c9285f95d5250", "keys": [{"_hint": "mitum-currency-key-v0.0.1", "weight": 100, "key": "02f17cefdd554aa8a7db787d07246d9295e72fc1860dab99d57ed2dbeb07e2d3d1fpu"}], "threshold": 100}, "amounts": [{"amount": "1", "currency": "DMC", "_hint": "mitum-currency-amount-v0.0.1"}]}]}, "signs": [{"signed_at": "2025-07-27T04:44:27.018Z", "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu", "signature": "5BpRZ4tixXBdme8BHgup2NxAdtS7fwMY8X1zbfjLohyg4ybjsus13sgvyVirvTtgKGYb8tf13GRCZ8XVjE8H2iZqg3DXi"}], "_hint": "mitum-extension-create-contract-account-operation-v0.0.1"}, "height": 125106, "confirmed_at": "2025-07-27T04:44:29.819Z", "reason": "", "in_state": True, "index": 0}}, "token": {"data": {"name": "test", "symbol": "TEST", "supply": 100, "decimals": 9, "owner": "0x55b0e6aF0182306C3188631dB57269a50171f480fca"}, "tx": {"hash": "4NAQGtcxPPSzkLnYhwpMTzauTcrkJL5yPhvky3nCvBbv", "fact_hash": "6ZCjJsHN2djz1fFaCA9BJJjB4bw1SfPY7dhhnPXx3qmk"}, "issued": "2025-07-27T04:44:32.625Z", "response": {"hash": "4NAQGtcxPPSzkLnYhwpMTzauTcrkJL5yPhvky3nCvBbv", "fact": {"hash": "6ZCjJsHN2djz1fFaCA9BJJjB4bw1SfPY7dhhnPXx3qmk", "token": "MjAyNS0wNy0yNyAwNDo0NDozMi42MTIgKzAwMDAgVVRD", "_hint": "mitum-token-register-model-operation-fact-v0.0.1", "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca", "contract": "0xf605141e3aFa5a1d90EC9b6A9e8C9285f95d5250fca", "currency": "DMC", "symbol": "TEST", "name": "test", "decimal": "9", "initial_supply": "100"}, "signs": [{"signed_at": "2025-07-27T04:44:32.613Z", "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu", "signature": "5BpRZ4LwUf2xzzRwxz3PDhDSgmKR8vXwJjvGThs3yi6jat9AUzGixPQtu97pxBaNFPF7mLHqnkLKZ3UNw711UdWbFh8E2"}], "_hint": "mitum-token-register-model-operation-v0.0.1"}, "receipt": {"_hint": "mitum-currency-operation-value-v0.0.1", "hash": "6ZCjJsHN2djz1fFaCA9BJJjB4bw1SfPY7dhhnPXx3qmk", "operation": {"hash": "4NAQGtcxPPSzkLnYhwpMTzauTcrkJL5yPhvky3nCvBbv", "fact": {"hash": "6ZCjJsHN2djz1fFaCA9BJJjB4bw1SfPY7dhhnPXx3qmk", "token": "MjAyNS0wNy0yNyAwNDo0NDozMi42MTIgKzAwMDAgVVRD", "_hint": "mitum-token-register-model-operation-fact-v0.0.1", "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca", "contract": "0xf605141e3aFa5a1d90EC9b6A9e8C9285f95d5250fca", "currency": "DMC", "symbol": "TEST", "name": "test", "decimal": "9", "initial_supply": "100"}, "signs": [{"signed_at": "2025-07-27T04:44:32.613Z", "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu", "signature": "5BpRZ4LwUf2xzzRwxz3PDhDSgmKR8vXwJjvGThs3yi6jat9AUzGixPQtu97pxBaNFPF7mLHqnkLKZ3UNw711UdWbFh8E2"}], "_hint": "mitum-token-register-model-operation-v0.0.1"}, "height": 125107, "confirmed_at": "2025-07-27T04:44:35.538Z", "reason": "", "in_state": "True", "index": 0}}}, "cid": "ff62ea73d1ff140d7cf9f3971a9a1eaa6816fee0dd314aed022f898a73e899c9"}
