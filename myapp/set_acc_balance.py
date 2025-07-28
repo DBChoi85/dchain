@@ -27,7 +27,7 @@ class Balance_List:
     def set_balance(self, address, balance):
         try:
             self.cursor.execute("INSERT INTO kv (address, value) VALUES(?, ?)", (address, balance))
-            # self.conn.commit()
+            self.conn.commit()
         except:
             print(f'잔액 기록 실패 : {address}')
         
@@ -52,6 +52,7 @@ if __name__ == "__main__":
     addr = key_pair['address']
 
     db = Balance_List()
-    # db.set_balance(addr, 10)
-    # db.commit()
+    db.set_balance(addr, 10)
+    db.commit()
     db.update_balance(addr, 35)
+    db.commit()

@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import json
 
 class Toekn_List:
     def __init__(self):
@@ -17,6 +18,7 @@ class Toekn_List:
                                 token_symbol TEXT,
                                 contract_addr TEXT UNIQUE,
                                 issued TEXT,
+                                supply INTEGER,
                                 meta_data TEXT
                             )
                             """
@@ -29,11 +31,12 @@ class Toekn_List:
     def commit(self):
         self.conn.commit()
     
-    def set_token(self, addr, token_name, token_symbol, contract_addr, issued, meta_data):
+    def set_token(self, addr, token_name, token_symbol, contract_addr, issued, supply, meta_data):
         try:
             self.cursor.execute("""
-                            INSERT INTO kv (addr, token_name, token_symbol, contract_addr, issued, meta_data) VALUES(?, ?, ?, ?, ?, ?)
-                            """, (addr, token_name, token_symbol, contract_addr, issued, meta_data))
-        except:
-            print(f"이미 존재하는 토큰입니다 : {token_name, contract_addr}")
+                            INSERT INTO kv (addr, token_name, token_symbol, contract_addr, issued, supply, meta_data) VALUES(?, ?, ?, ?, ?, ?, ?)
+                            """, (addr, token_name, token_symbol, contract_addr, issued, supply, json.dumps(meta_data)))
+            self.conn.commit()
+        except Exception as e:
+            print(f"Error : {e.__class__.__name__} : {e}")
 

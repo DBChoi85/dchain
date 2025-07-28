@@ -14,11 +14,14 @@ class Balance_List:
         
 
     def get_balance(self, address):
-        self.cursor.execute("SELECT value FROM kv WHERE address = ?",(address,))
-        return(self.cursor.fetchone()[0])
+        try:
+            self.cursor.execute("SELECT value FROM kv WHERE address = ?",(address,))
+            return(self.cursor.fetchone()[0])
+        except:
+            return False
 
 if __name__ == "__main__":
     db = Balance_List()
     print(db.all_list())
     addr = '0xD1c8163FC4CE4fd1498E21368694dD3B296316CDfca'
-    print(db.get_balance(addr))
+    print(type(db.get_balance(addr)))
