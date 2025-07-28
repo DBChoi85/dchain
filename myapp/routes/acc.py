@@ -28,26 +28,39 @@ def create_acc():
         set_acc_db.save_private_key(addr, acc_data['privatekey'])
         set_acc_db.save_public_key(addr, acc_data['publickey'])
         set_acc_db.commit()
-        return jsonify(addr)
+        return_data = {"address" : addr}
+        return jsonify(return_data)
     else:
         return response
 
-@acc_api.route('/get_list', methods=['GET'])
+@acc_api.route('/get_list', methods=['GET', 'POST'])
 def get_acc_list():
     acc_list = get_acc_db.all_list()
-    return jsonify(acc_list)
+    return_data = {}
+    for idx, item in enumerate(acc_list):
+        return_data[idx] = item
+    return jsonify(return_data)
 
-@acc_api.route('/get_public_key', methods=['GET'])
+@acc_api.route('/get_public_key', methods=['POST'])
 def get_public_key():
-    addr = request.args.get("address")
+    # addr = request.args.get("address")
+    addr = request.get_json()
+    addr = addr["address"]
+    # print(addr)
     public_key = get_acc_db.get_public_key(addr)
-    return jsonify(public_key)
+    return_data = {"public_key" : public_key}
+    return jsonify(return_data)
 
-@acc_api.route('/get_private_key', methods=['GET'])
+@acc_api.route('/get_private_key', methods=['POST'])
 def get_private_key():
-    addr = request.args.get("address")
+    # addr = request.args.get("address")
+    addr = request.get_json()
+    addr = addr['address']
+    # print(addr)
     private_key = get_acc_db.get_private_key(addr)
-    return jsonify(private_key)
+    return_data = {"private_key" : private_key}
+    # print(return_data)
+    return jsonify(return_data)
 
 
 
