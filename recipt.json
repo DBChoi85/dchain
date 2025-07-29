@@ -1,0 +1,70 @@
+{
+  "state": "OK",
+  "rcode": {},
+  "msg": "",
+  "data": {
+    "contract": "0x4a1dD7273b37669e6A926e5F9C77aDFa9fe1E826fca",
+    "data": {
+      "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+      "receiver": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+      "amount": 50
+    },
+    "tx": {
+      "hash": "GB8RhKDAdvfAB51wn97hpGEpo8WfVTtuuEgCucehfEbY",
+      "fact_hash": "FoUr7FPRsB2jnhBNSzA3sGf1WwkzqqdzjEXaUtoPDqzD"
+    },
+    "issued": "2025-07-29T05:53:10.407Z",
+    "response": {
+      "hash": "GB8RhKDAdvfAB51wn97hpGEpo8WfVTtuuEgCucehfEbY",
+      "fact": {
+        "hash": "FoUr7FPRsB2jnhBNSzA3sGf1WwkzqqdzjEXaUtoPDqzD",
+        "token": "MjAyNS0wNy0yOSAwNTo1MzoxMC4zOTMgKzAwMDAgVVRD",
+        "_hint": "mitum-token-transfer-operation-fact-v0.0.1",
+        "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+        "contract": "0x4a1dD7273b37669e6A926e5F9C77aDFa9fe1E826fca",
+        "currency": "DMC",
+        "receiver": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+        "amount": "50"
+      },
+      "signs": [
+        {
+          "signed_at": "2025-07-29T05:53:10.394Z",
+          "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu",
+          "signature": "5BpRZ8vkM4f38Kng35FpWSWASVT9GGvSB3wAmrQXuk4Qumq82rRBNSmVfmuS3CTFBmeHnP5Fn4dpKDwpEy3Lgn9r7E1RJ"
+        }
+      ],
+      "_hint": "mitum-token-transfer-operation-v0.0.1"
+    },
+    "receipt": {
+      "_hint": "mitum-currency-operation-value-v0.0.1",
+      "hash": "FoUr7FPRsB2jnhBNSzA3sGf1WwkzqqdzjEXaUtoPDqzD",
+      "operation": {
+        "hash": "GB8RhKDAdvfAB51wn97hpGEpo8WfVTtuuEgCucehfEbY",
+        "fact": {
+          "hash": "FoUr7FPRsB2jnhBNSzA3sGf1WwkzqqdzjEXaUtoPDqzD",
+          "token": "MjAyNS0wNy0yOSAwNTo1MzoxMC4zOTMgKzAwMDAgVVRD",
+          "_hint": "mitum-token-transfer-operation-fact-v0.0.1",
+          "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+          "contract": "0x4a1dD7273b37669e6A926e5F9C77aDFa9fe1E826fca",
+          "currency": "DMC",
+          "receiver": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+          "amount": "50"
+        },
+        "signs": [
+          {
+            "signed_at": "2025-07-29T05:53:10.394Z",
+            "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu",
+            "signature": "5BpRZ8vkM4f38Kng35FpWSWASVT9GGvSB3wAmrQXuk4Qumq82rRBNSmVfmuS3CTFBmeHnP5Fn4dpKDwpEy3Lgn9r7E1RJ"
+          }
+        ],
+        "_hint": "mitum-token-transfer-operation-v0.0.1"
+      },
+      "height": 125890,
+      "confirmed_at": "2025-07-29T05:53:13.314Z",
+      "reason": "",
+      "in_state": true,
+      "index": 0
+    }
+  },
+  "cid": "98ec01a1f4f00cc309c30164dd75508d0d6e57a3511da45ae2de79c686acbfb8"
+}

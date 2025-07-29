@@ -3,10 +3,13 @@ import os
 
 class Balance_List:
     def __init__(self):
+        self.conn = None
+
+    def connect(self, cont_addr):
         db_dir_loc = "./data_base"
         if not os.path.exists(db_dir_loc):
             os.mkdir(db_dir_loc)
-        db_loc = os.path.join(db_dir_loc, "user_acc_balance.db")
+        db_loc = os.path.join(db_dir_loc, "{}.db".format(cont_addr))
         self.conn = sqlite3.connect(db_loc, check_same_thread=False)
         self.cursor = self.conn.cursor()
         self.cursor.execute("""
@@ -27,16 +30,35 @@ class Balance_List:
     def set_balance(self, address, balance):
         try:
             self.cursor.execute("INSERT INTO kv (address, value) VALUES(?, ?)", (address, balance))
-            self.conn.commit()
-        except:
-            print(f'잔액 기록 실패 : {address}')
+        except Exception as e:
+            print(f'잔액 기록 실패 : {address} - {e}')
         
-    def update_balance(self, address, balance):
+    def increase_balance(self, address, amount):
         try:
-            self.cursor.execute("UPDATE kv SET value = ? WHERE address = ?", (balance, addr))
-            self.conn.commit()
-        except:
-            print(f'잔액 갱신 실패 : {address}')
+            self.cursor.execute("SELECT value FROM kv WHERE address = ?", (address,))
+            row = self.cursor.fetchone()
+            if row:
+                new_balance = row[0] + amount
+                self.cursor.execute("UPDATE kv SET value = ? WHERE address = ?", (new_balance, address))
+            else:
+                self.cursor.execute("INSERT INTO kv (address, value) VALUES (?, ?)", (address, amount))
+        except Exception as e:
+            print(f'잔액 증가 실패: {address} - {e}')
+
+    def decrease_balance(self, address, amount):
+        try:
+            self.cursor.execute("SELECT value FROM kv WHERE address = ?", (address,))
+            row = self.cursor.fetchone()
+            if row:
+                if row[0] >= amount:
+                    new_balance = row[0] - amount
+                    self.cursor.execute("UPDATE kv SET value = ? WHERE address = ?", (new_balance, address))
+                else:
+                    print(f"잔액 부족: {address} (현재 잔액 {row[0]}, 요청 감소 {amount})")
+            else:
+                print(f"주소 없음: {address}")
+        except Exception as e:
+            print(f'잔액 감소 실패: {address} - {e}')
 
 
 if __name__ == "__main__":
@@ -50,9 +72,12 @@ if __name__ == "__main__":
 
     key_pair = data['data']['key_pair']
     addr = key_pair['address']
+    cid = key_pair['publickey']
+    pkey = key_pair['privatekey']
 
     db = Balance_List()
+    db.connect(pkey)
     db.set_balance(addr, 10)
     db.commit()
-    db.update_balance(addr, 35)
+    db.increase_balance('test', 20)
     db.commit()

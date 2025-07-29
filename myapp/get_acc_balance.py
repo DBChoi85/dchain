@@ -3,8 +3,13 @@ import os
 
 class Balance_List:
     def __init__(self):
+        self.conn = None
+
+    def connect(self, db_name):
         db_dir_loc = "./data_base"
-        db_loc = os.path.join(db_dir_loc, "user_acc_balance.db")
+        if not os.path.exists(db_dir_loc):
+            os.mkdir(db_dir_loc)
+        db_loc = os.path.join(db_dir_loc, "{}.db".format(db_name))
         self.conn = sqlite3.connect(db_loc, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
