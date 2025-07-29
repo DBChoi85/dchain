@@ -29,7 +29,12 @@ class Balance_List:
     
     def set_balance(self, address, balance):
         try:
-            self.cursor.execute("INSERT INTO kv (address, value) VALUES(?, ?)", (address, balance))
+            self.cursor.execute("SELECT value FROM kv WHERE address = ?", (address,))
+            row = self.cursor.fetchone()
+            if row:
+                self.cursor.execute("UPDATE kv SET value = ? WHERE address = ?", (balance, address))
+            else:
+                self.cursor.execute("INSERT INTO kv (address, value) VALUES(?, ?)", (address, balance))
         except Exception as e:
             print(f'잔액 기록 실패 : {address} - {e}')
         
