@@ -34,8 +34,8 @@ addr = {'address': '0x726E3815F33677c6DF46A6B24E3357daaA93ABC3fca'}
 # create_token = requests.post(base_url + 'create', json=data)
 # print(create_token.json())
 
-transfer_token = requests.post(base_url + 'transfer', json=token_data)
-print(transfer_token.json())
+# transfer_token = requests.post(base_url + 'transfer', json=token_data)
+# print(transfer_token.json())
 
 # r_data = {
 #         "contract_address" : '0x6E830ad7eE16877f127A06d5682C11E0B60f7d19fca',
