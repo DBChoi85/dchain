@@ -1,0 +1,73 @@
+{
+  "cid": "32ab19395d8dc1fed1171c9481435056595e2511e725c38c0db5155311539be7",
+  "data": {
+    "contract": "0x6E830ad7eE16877f127A06d5682C11E0B60f7d19fca",
+    "data": {
+      "amount": 100,
+      "holder": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+      "receiver": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+      "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca"
+    },
+    "issued": "2025-07-29T08:32:06.572Z",
+    "receipt": {
+      "_hint": "mitum-currency-operation-value-v0.0.1",
+      "confirmed_at": "2025-07-29T08:32:09.325Z",
+      "hash": "DrhBg8pfr2D8NppEPDi16TWfNYBC15zx5XXh7JWA3UEr",
+      "height": 125979,
+      "in_state": true,
+      "index": 0,
+      "operation": {
+        "_hint": "mitum-token-transfer-from-operation-v0.0.1",
+        "fact": {
+          "_hint": "mitum-token-transfer-from-operation-fact-v0.0.1",
+          "amount": "100",
+          "contract": "0x6E830ad7eE16877f127A06d5682C11E0B60f7d19fca",
+          "currency": "DMC",
+          "hash": "DrhBg8pfr2D8NppEPDi16TWfNYBC15zx5XXh7JWA3UEr",
+          "receiver": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+          "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+          "target": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+          "token": "MjAyNS0wNy0yOSAwODozMjowNi41NTkgKzAwMDAgVVRD"
+        },
+        "hash": "GFVN9NcMUpbBqEfpnmBHoEtyhWzehwkX7MPjUnJEom9",
+        "signs": [
+          {
+            "signature": "5BpRZ6t84iaugp1NAgGgiH7AwJebbgaGcJxPR8S87svSrJrL4EzgvDkqe8iKHTQjpmY9RysomhUwZYzbqDo3sjDjt4gir",
+            "signed_at": "2025-07-29T08:32:06.56Z",
+            "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu"
+          }
+        ]
+      },
+      "reason": ""
+    },
+    "response": {
+      "_hint": "mitum-token-transfer-from-operation-v0.0.1",
+      "fact": {
+        "_hint": "mitum-token-transfer-from-operation-fact-v0.0.1",
+        "amount": "100",
+        "contract": "0x6E830ad7eE16877f127A06d5682C11E0B60f7d19fca",
+        "currency": "DMC",
+        "hash": "DrhBg8pfr2D8NppEPDi16TWfNYBC15zx5XXh7JWA3UEr",
+        "receiver": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+        "sender": "0x55b0e6aF0182306C3188631dB57269a50171f480fca",
+        "target": "0x680F2FbD587ba8099D39f2930557EFf5B1382BB0fca",
+        "token": "MjAyNS0wNy0yOSAwODozMjowNi41NTkgKzAwMDAgVVRD"
+      },
+      "hash": "GFVN9NcMUpbBqEfpnmBHoEtyhWzehwkX7MPjUnJEom9",
+      "signs": [
+        {
+          "signature": "5BpRZ6t84iaugp1NAgGgiH7AwJebbgaGcJxPR8S87svSrJrL4EzgvDkqe8iKHTQjpmY9RysomhUwZYzbqDo3sjDjt4gir",
+          "signed_at": "2025-07-29T08:32:06.56Z",
+          "signer": "0288713ccd31d3e6355e21e4bcce5d8e349933d622d2f3e568e8a6e0af7b64ddd1fpu"
+        }
+      ]
+    },
+    "tx": {
+      "fact_hash": "DrhBg8pfr2D8NppEPDi16TWfNYBC15zx5XXh7JWA3UEr",
+      "hash": "GFVN9NcMUpbBqEfpnmBHoEtyhWzehwkX7MPjUnJEom9"
+    }
+  },
+  "msg": "",
+  "rcode": {},
+  "state": "OK"
+}

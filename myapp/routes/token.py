@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from myapp.utils import BASE_URL, API_TOKEN, CHAIN_NAME, HEADERS, OWNER_ADDR, OWNER_PRIVATE
 import requests
 import os
+import json
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import set_token_list
@@ -9,6 +10,7 @@ import set_acc_balance
 import get_acc_balance
 import get_acc_list
 import set_receipt_list
+
 
 token_api = Blueprint('token', __name__)
 set_token_db = set_token_list.Toekn_List()
@@ -70,22 +72,22 @@ def token_transfer():
     }
     response = requests.post(url,json=data)
     set_balance_db.connect(str(contract_address))
-    get_balance_db.connect(str(contract_address))
+    set_receipt_db.connect(str(contract_address))
 
     if response.status_code == 200:
         response_data = response.json()
         receipt_sender = response_data['data']['receipt']['operation']['fact']['sender']
-        receipt_receiver = response_data['data']['receipt']['operation']['fact']['reciver']
+        receipt_receiver = response_data['data']['receipt']['operation']['fact']['receiver']
         receipt_amount = response_data['data']['receipt']['operation']['fact']['amount']
-        set_balance_db.decrease_balance(receipt_sender, receipt_amount)
-        set_balance_db.increase_balance(receipt_receiver, receipt_amount)
+        set_balance_db.decrease_balance(receipt_sender, int(receipt_amount))
+        set_balance_db.increase_balance(receipt_receiver, int(receipt_amount))
         set_balance_db.commit()
         receipt_issued = response_data['data']['issued']
         set_receipt_db.set_receipt(contract_address, receipt_issued, receipt_sender, receipt_receiver, receipt_amount, response_data)
         set_receipt_db.commit()
         return jsonify(response_data)
     else:
-        return response.json()
+        return jsonify(response.json())
     
 @token_api.route('/balance_list', methods=['POST'])
 def token_balance():
@@ -135,17 +137,29 @@ def token_retrieve():
 
     transfer_from_response = requests.post(transfer_from_url, json=transfer_data)
     if transfer_from_response.status_code == 200:
-        return transfer_from_response.json()
+        response_data = transfer_from_response.json()
+        receipt_sender = response_data['data']['receipt']['operation']['fact']['target']
+        receipt_receiver = response_data['data']['receipt']['operation']['fact']['receiver']
+        receipt_amount = response_data['data']['receipt']['operation']['fact']['amount']
+        set_balance_db.decrease_balance(receipt_sender, int(receipt_amount))
+        set_balance_db.increase_balance(receipt_receiver, int(receipt_amount))
+        set_balance_db.commit()
+        receipt_issued = response_data['data']['issued']
+        set_receipt_db.set_receipt(contract_address, receipt_issued, receipt_sender, receipt_receiver, receipt_amount, response_data)
+        set_receipt_db.commit()
+        return jsonify(transfer_from_response.json())
     else:
-        return transfer_from_response.json()
+        return jsonify(transfer_from_response.json())
     
 
 @token_api.route('/refresh_balance', methods=['POST'])
 def refresh_balance():
-    balance_url = BASE_URL + 'token/balance'
-    cont_addr = request.get_json['contract_address']
+    balance_url = BASE_URL + '/token/balance'
+    cont_addr = request.get_json()['contract_address']
     set_balance_db.connect(cont_addr)
     acc_list = get_acc_db.all_list()
+    acc_list.append(str(OWNER_ADDR))
+    # print(type(acc_list))
     for addr in acc_list:
         balance_data = {
             "token" : API_TOKEN,
@@ -154,8 +168,15 @@ def refresh_balance():
             "addr" : addr
          }
         response = requests.post(balance_url, json=balance_data)
-        balance = response.json()['data']['balance']
-        set_balance_db.set_balance(addr, balance=balance)
+        # print(response.status_code)
+        if response.status_code == 200:
+            balance = response.json()
+            balance = balance['data']['balance']
+            # print(balance)
+        # balance = json.load(balance)['data']['balance']
+            set_balance_db.set_balance(addr, balance=balance)
+        else:
+            print("dchain 응답 없음")
     
     set_balance_db.commit()
     get_balance_db.connect(cont_addr)

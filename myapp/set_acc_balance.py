@@ -43,7 +43,7 @@ class Balance_List:
             self.cursor.execute("SELECT value FROM kv WHERE address = ?", (address,))
             row = self.cursor.fetchone()
             if row:
-                new_balance = row[0] + amount
+                new_balance = int(row[0]) + amount
                 self.cursor.execute("UPDATE kv SET value = ? WHERE address = ?", (new_balance, address))
             else:
                 self.cursor.execute("INSERT INTO kv (address, value) VALUES (?, ?)", (address, amount))
