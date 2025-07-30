@@ -47,8 +47,8 @@ def create_token():
         set_balance_db.connect(str(contract_addr))
         set_balance_db.set_balance(OWNER_ADDR, supply)
         set_balance_db.commit()
-        retrun_data = {"contract address": contract_addr}
-        return jsonify(retrun_data)
+        return_data = {"contract address": contract_addr}
+        return jsonify(return_data)
     else:
         return response
     
@@ -85,7 +85,13 @@ def token_transfer():
         receipt_issued = response_data['data']['issued']
         set_receipt_db.set_receipt(contract_address, receipt_issued, receipt_sender, receipt_receiver, receipt_amount, response_data)
         set_receipt_db.commit()
-        return jsonify(response_data)
+        return_data = {
+            "Date" : receipt_issued,
+            "Sender" : receipt_sender,
+            "Receiver" : receipt_receiver,
+            "Amount" : receipt_amount
+        }
+        return jsonify(return_data)
     else:
         return jsonify(response.json())
     
@@ -147,7 +153,12 @@ def token_retrieve():
         receipt_issued = response_data['data']['issued']
         set_receipt_db.set_receipt(contract_address, receipt_issued, receipt_sender, receipt_receiver, receipt_amount, response_data)
         set_receipt_db.commit()
-        return jsonify(transfer_from_response.json())
+        return_data = {
+            "Date" : receipt_issued,
+            "Target" : receipt_sender,
+            "Amount" : receipt_amount
+        }
+        return jsonify(return_data)
     else:
         return jsonify(transfer_from_response.json())
     
