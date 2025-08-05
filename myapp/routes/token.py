@@ -10,7 +10,7 @@ import set_acc_balance
 import get_acc_balance
 import get_acc_list
 import set_receipt_list
-
+import get_token_list
 
 token_api = Blueprint('token', __name__)
 set_token_db = set_token_list.Toekn_List()
@@ -18,6 +18,7 @@ set_balance_db = set_acc_balance.Balance_List()
 get_balance_db = get_acc_balance.Balance_List()
 get_acc_db = get_acc_list.Acc_List()
 set_receipt_db = set_receipt_list.Receipt_List()
+get_token_db = get_token_list.Token_List()
 
 @token_api.route('/create', methods=['POST'])
 def create_token():
@@ -194,6 +195,11 @@ def refresh_balance():
     all_list = get_balance_db.all_list()
     return jsonify(all_list)
 
+
+@token_api.route('/token_list', methods=['POST'])
+def token_list():
+    token_list = get_token_db.all_list()
+    return jsonify(token_list)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from myapp.utils import BASE_URL, API_TOKEN, CHAIN_NAME, HEADERS
+from myapp.utils import BASE_URL, API_TOKEN, CHAIN_NAME, HEADERS, OWNER_ADDR, OWNER_PRIVATE
 import requests
 import json
 import os
@@ -62,6 +62,14 @@ def get_private_key():
     # print(return_data)
     return jsonify(return_data)
 
+
+@acc_api.route('/get_owner_info', methods=["POST"])
+def get_owner_info():
+    return_data = {
+        "address" : OWNER_ADDR,
+        "private_key" : OWNER_PRIVATE
+        }
+    return jsonify(return_data)
 
 
 if __name__ == "__main__":

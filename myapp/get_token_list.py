@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-class Acc_List:
+class Token_List:
     def __init__(self):
         db_dir_loc = "./data_base"
         db_loc = os.path.join(db_dir_loc, "token_list.db")
