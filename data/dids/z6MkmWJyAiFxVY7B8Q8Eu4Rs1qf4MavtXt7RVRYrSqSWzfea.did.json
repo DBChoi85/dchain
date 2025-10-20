@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1"
+  ],
+  "id": "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea",
+  "verificationMethod": [
+    {
+      "id": "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea#z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea",
+      "type": "Multikey",
+      "controller": "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea",
+      "publicKeyMultibase": "z843vaU1X9zci1uHYDVU2Ak74Y1f37zs4oQdvcZUW5SsC"
+    }
+  ],
+  "authentication": [
+    "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea#z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea"
+  ],
+  "assertionMethod": [
+    "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea#z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea"
+  ],
+  "capabilityInvocation": [
+    "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea#z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea"
+  ],
+  "capabilityDelegation": [
+    "did:key:z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea#z6MkmWJyAiFxVY7B8Q8Eu4Rs1qf4MavtXt7RVRYrSqSWzfea"
+  ],
+  "keyAgreement": []
+}
