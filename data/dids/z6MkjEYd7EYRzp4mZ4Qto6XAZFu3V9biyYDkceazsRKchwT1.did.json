@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/multikey/v1"
+  ],
+  "id": "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1",
+  "verificationMethod": [
+    {
+      "id": "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1#z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1",
+      "type": "Multikey",
+      "controller": "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1",
+      "publicKeyMultibase": "z5nHaWzHzfGaJSZaC7XZKiAM3faKsZeyPvdg539Mbnifd"
+    }
+  ],
+  "authentication": [
+    "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1#z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1"
+  ],
+  "assertionMethod": [
+    "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1#z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1"
+  ],
+  "capabilityInvocation": [
+    "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1#z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1"
+  ],
+  "capabilityDelegation": [
+    "did:key:z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1#z6MkjEYd7EYRzp4mZ4Qto6XAZFu3V9biyYDkceazsRKchwT1"
+  ],
+  "keyAgreement": []
+}
