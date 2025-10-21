@@ -222,7 +222,7 @@ def list_dids():
     return jsonify({"count": len(items), "items": items})
 
 
-@did_api.route("resolve/", methods=['POST'])
+@did_api.route("/resolve", methods=['POST'])
 def resolve_did():
     body = request.get_json(silent=True) or {}
     did_or_fp = body.get("label")
@@ -243,7 +243,7 @@ def resolve_did():
     return jsonify(doc)
 
 
-@did_api.route("delete/", methods=['POST'])
+@did_api.route("/delete", methods=['POST'])
 def delete_did():
     body = request.get_json(silent=True) or {}
     did_or_fp = body.get("label")
