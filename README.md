@@ -6,7 +6,11 @@ python 3.11 이상 필요
 
 1. git clone
 ```
-git clone 
+git clone https://github.com/DBChoi85/dchain.git
+```
+or
+```
+gh repo clone dbchoi85/dchain
 ```
 2. Dependency install
 ```
