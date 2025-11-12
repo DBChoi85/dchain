@@ -4,7 +4,8 @@
 python 3.11 이상 필요  
 방화벽에서 접속 port 개방 필요
 
-Dependency install
+1. git clone
+2. Dependency install
 ```
 pip install -r requirements.txt
 ```
