@@ -20,11 +20,22 @@ class Read_MeataData:
 
     
     def all_list(self):
-        self.cursor.execute("SELECT address FROM kv")
-        tmp_list = self.cursor.fetchall()
-        tmp_list = [x[0] for x in tmp_list]
-        tmp_list = list(set(tmp_list))
-        return tmp_list
+        self.cursor.execute("SELECT * FROM kv")
+        rows = self.cursor.fetchall()
+
+        # meta_data는 JSON 문자열이므로 Python 객체로 변환
+        result = []
+        for row in rows:
+            result.append({
+                "key": row[0],
+                "contract_addr": row[1],
+                "issued": row[2],
+                "sender": row[3],
+                "receiver": row[4],
+                "amount": row[5],
+                "meta_data": json.loads(row[6]) if row[6] else None
+            })
+        return result
 
     def get_meta_data(self, key):
         self.cursor.execute("""
