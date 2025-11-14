@@ -202,6 +202,14 @@ def token_list():
     return jsonify(token_list)
 
 
+@token_api.route('/tx_history', methods=['POST'])
+def tx_history():
+    cont_addr = request.get_json()['contract_address']
+    get_receipt_db.connect(cont_addr)
+    tx_list = get_receipt_db.all_list()
+    return jsonify(tx_list)
+
+
 if __name__ == "__main__":
     r = create_token()
     print(r)
