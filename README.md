@@ -37,12 +37,9 @@ API_TOKEN
 OWNER_ADDR  
 OWNER_PRIVATE
 
-토큰 발행 권한을 위해 fauset 받기
-faucet API 호출 권한 관련
-토큰 발급을 위해 faucet API를 호출하였으나,
-"해당 API 호출 권한이 없습니다. (akey)"라는 메시지가 반환되고 있습니다.
-해당 문제 해결법에 관해 문의드립니다.
-=> API 호출권한 부여를 위해 사용 하시는분들의 BaaS 이메일 계정과 API토큰(또는 App Key) 회신 주시면 등록 후 안내 드리겠습니다.
+토큰 발행 권한을 위해 fauset 받기  
+faucet API 호출 권한 관련  
+=> API 호출권한 부여를 위해 사용 하시는분들의 BaaS 이메일 계정과 API토큰(또는 App Key) 회신 주시면 등록 후 안내 드리겠습니다.  
 => 박우진 <wjpark@rootlab.xyz>
 
 ## 서비스 실행 방법
