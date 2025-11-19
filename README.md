@@ -48,8 +48,6 @@ faucet API 호출 권한 관련
 python run.py
 ```
 
-
-
 ## 각종 DB 및 DID 생성 위치.
 1. DB 생성 위치 dchain/data_base
 2. did 생성 위치 dchain/data
