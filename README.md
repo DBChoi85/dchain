@@ -51,3 +51,4 @@ python run.py
 ## 각종 DB 및 DID 생성 위치.
 1. DB 생성 위치 dchain/data_base
 2. did 생성 위치 dchain/data
+3. log 생성 위치 dchain/log
