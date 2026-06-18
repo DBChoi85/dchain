@@ -27,14 +27,9 @@ host = '0.0.0.0' -> 모든 네트워크 인터페이스, 고정 IP로 설정을 
 port = 5000 -> 접속 port, 변경 필요시 해당 port 입력
 
 ## utils.py 설정
-https://www.daegu.go.kr/daeguchain/baas/setting/key
 
-위 주소에서 아래 변수들 정보를 찾아 utils.py에 업데이트 필요  
+아래 변수들 정보를 utils.py에 업데이트 필요  
 API_TOKEN   
-
-<img width="790" height="352" alt="image" src="https://github.com/user-attachments/assets/67e6863b-aff9-4715-8c1e-15c11a51fbae" />
-
-아래 정보는 account를 생성하여 업데이트  
 OWNER_ADDR  
 OWNER_PRIVATE
 
